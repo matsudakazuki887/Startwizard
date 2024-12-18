@@ -1,0 +1,31 @@
+﻿<Window x:Class="Startwizard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ウィザード" Height="265" Width="340">
+    <Grid Margin="10">
+        <!-- 初期画面 -->
+        <Grid Name="Step1" Visibility="Visible" Margin="0,0,0,0">
+            <Label Content="管理者ユーザーの作成" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0,10,0,20"/>
+            <ProgressBar Name="ProgressBar1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="10" Margin="0,40,0,0" Minimum="0" Maximum="3" Value="0" />
+            <TextBlock
+                       HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,60,0,0" FontSize="12" Width="320" Height="37"><Run Text="管理者ユーザーを作成しますか？作成した場合、インストールでき&#xA;"/><Run Language="ja-jp" Text="る"/><Run Text="アプリを制限できます"/></TextBlock>
+            <Button Content="いいえ" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Height="20" Margin="0,0,107,10" Click="NoButton_Click"/>
+            <Button Content="はい" HorizontalAlignment="Right" Width="75" Height="20" Margin="0,0,10,10" Click="YesButton_Click" VerticalAlignment="Bottom"/>
+        </Grid>
+
+        <!-- ユーザー名とパスワード入力画面 -->
+        <Grid Name="Step2" Visibility="Collapsed">
+            <Label Content="ユーザー名とパスワードの入力" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="0,10,0,20"/>
+            <ProgressBar Name="ProgressBar2" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="10" Margin="0,40,0,0" Minimum="0" Maximum="3" Value="1" />
+            <StackPanel VerticalAlignment="Top" Margin="0,70,0,0" HorizontalAlignment="Center">
+                <TextBox Name="UsernameTextBox" Width="250" Height="30" Margin="0,10,0,10" Text="ユーザー名を入力"/>
+                <PasswordBox Name="PasswordBox" Width="250" Height="30" Margin="0,10,0,10" />
+            </StackPanel>
+            <Button Content="戻る" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Height="20" Margin="0,0,107,10" Click="BackButton_Click"/>
+            <Button Content="次へ" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Height="20" Margin="0,0,10,10" Click="NextButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
